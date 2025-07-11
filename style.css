@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Palheta de cores */
+:root {
+  --primaria: #e6b07e;
+  --secundaria: #665e57;
+  --tom-1: #ead8c7;
+  --tom-2: #b38962;
+  --tom-3: #664e38;
+}
+
+h1 {
+  /* Titulo barbearia vanguarda estilizado */
+  color: var(--secundaria);
+  font-family: Exo;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 48px */
+}
+span{
+  color: var(--tom-3);
+}
