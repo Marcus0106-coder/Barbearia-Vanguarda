@@ -5,6 +5,7 @@
 /* ******** */
 /* codigo que define layot, espaçamento e alinhamento do website */
 
+/* Seção Hero */
 .hero {
   justify-content: space-around;
   padding: 64px 16px;
@@ -32,6 +33,7 @@
 
   & #hero-slider {
     margin-top: 16px;
+    justify-content: center;
   }
   & span {
     color: var(--tom-3);
@@ -53,6 +55,49 @@
   background-color: var(--tom-1);
 }
 
+/* Seção A Barbearia */
+.A-Barbearia-Section {
+  justify-content: space-between;
+
+  & .card {
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 8px 12px 0px 0px;
+    background-color: var(--tom-1);
+
+    border-top: 3px;
+    border-right: 3px;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-style: solid;
+
+    border-image-source: linear-gradient(
+      30deg,
+      var(--tom-1) 60%,
+      var(--tom-3) 100%
+    );
+    border-image-slice: 1;
+
+    & p {
+      margin: 0;
+    }
+  }
+  & [role="mask"] {
+    width: 420px;
+    height: 420px;
+    align-items: center;
+    border-radius: 100%;
+    position: absolute;
+    z-index: -10;
+
+    & img {
+      width: 100%;
+    }
+  }
+}
+
 /* ************** */
 /* COMPONENTES */
 /* ************** */
@@ -62,12 +107,14 @@
 section {
   width: 100%;
 
-  /* svh=samallest view height */
+  /* svh=smallest view height */
   height: 100svh;
   padding: 64px 32px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+
+  position: relative;
 }
 /* Titulo */
 h1 {
@@ -99,7 +146,6 @@ div[role="mask"] {
   height: 260px;
   border-radius: 8px;
   display: flex;
-  justify-content: center;
 
   overflow: hidden;
 
@@ -111,4 +157,84 @@ p {
   font-size: 20px;
   font-family: "Source Serif 4";
   opacity: 0.65;
+
+  &.text-justify {
+    text-align: justify;
+  }
+
+  &.text-sm {
+    font-size: 16px;
+  }
+}
+
+/* Botão */
+a,
+button {
+  /* Layout */
+  width: fit-content;
+  display: inline-flex;
+  padding: 8px 24px;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  /*  Estilo */
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--tom-2) 100%, white 20%);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+
+  /* Tipografia */
+  color: var(--tom-3, #664e38);
+  font-family: Exo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+
+  /* Remove a cor de destaque do toque em dispositivos móveis */
+  -webkit-tap-highlight-color: transparent;
+
+  transition: all 150ms;
+
+  /* Interação */
+  &:hover {
+    background: color-mix(in srgb, var(--tom-2) 100%, black 20%);
+    color: var(--tom-1);
+  }
+
+  &:active {
+    background: color-mix(in srgb, var(--tom-2) 100%, white 40%);
+  }
+ 
+}
+
+ .Bolinhas {
+    width: 300px;
+    height: 300px;
+   
+   
+    background-color: var(--tom-3);
+    mask: url("public/Bolinhas.svg") no-repeat center;
+    mask-size: 100%;
+
+    position: absolute;
+    left: 0px;
+    z-index: -20;
+
+  }
+
+
+
+
+
+/* ***************** */
+/* Utilitarios */
+/* ******************* */
+
+.translate-y-center {
+  translate: 0 -50%;
+  top: 50%;
+
 }
