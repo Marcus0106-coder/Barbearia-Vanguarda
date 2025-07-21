@@ -1,49 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+/* Palheta de cores */
 
-/* ******* */
+/* ***** */
 /* BASE */
-/* ******** */
-/* codigo que define layot, espaçamento e alinhamento do website */
-
-/* Seção Hero */
-.hero {
-  justify-content: space-around;
-  padding: 64px 16px;
-
-  & header {
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    & .logo-hero {
-      /* Posicionamento absoluto;
-    equivalente a ignorar auto layout;
-    exige "position: relative" no elemento pai*/
-      position: absolute;
-      right: -80px;
-      opacity: 0.7;
-      z-index: 10;
-    }
-  }
-
-  & .hero-paragraph {
-    width: 272px;
-    align-self: center;
-  }
-
-  & #hero-slider {
-    margin-top: 16px;
-    justify-content: center;
-  }
-  & span {
-    color: var(--tom-3);
-    font-weight: 800;
-  }
-
-  & img {
-    height: 100%;
-  }
-}
+/* ***** */
+/* código que define layout, espaçamento e alinhamento do website*/
 
 :root {
   --primaria: #e6b07e;
@@ -55,23 +16,58 @@
   background-color: var(--tom-1);
 }
 
-/* Seção A Barbearia */
-.A-Barbearia-Section {
-  justify-content: space-between;
+.hero {
+  justify-content: space-around;
 
+  & paragrafo-hero {
+    width: 272px;
+  }
+
+  & header {
+    align-items: center;
+    display: flex;
+
+    & .logo-hero {
+      /* Posicionamento absoluto:width:
+  equivalente a ignorar auto layout;
+  exige "position: relative" no elemento pai
+  */
+      position: absolute;
+      right: -80px;
+      opacity: 0.7;
+    }
+  }
+  & img {
+    height: 100%;
+  }
+  & span {
+    color: var(--tom-3);
+    font-weight: 800;
+  }
+
+  & #hero-slider {
+    margin-top: 16px;
+    justify-content: center;
+  }
+}
+
+.a-barnearia-section {
+  justify-content: space-between;
   & .card {
     width: 270px;
     display: flex;
     flex-direction: column;
     gap: 32px;
     padding: 8px 12px 0px 0px;
-    background-color: var(--tom-1);
 
     border-top: 3px;
     border-right: 3px;
     border-left: 0px;
     border-bottom: 0px;
+
     border-style: solid;
+
+    background-color: var(--tom-1);
 
     border-image-source: linear-gradient(
       30deg,
@@ -84,11 +80,13 @@
       margin: 0;
     }
   }
+
   & [role="mask"] {
     width: 420px;
     height: 420px;
-    align-items: center;
     border-radius: 100%;
+    align-items: center;
+
     position: absolute;
     z-index: -10;
 
@@ -96,40 +94,99 @@
       width: 100%;
     }
   }
+
+  & img {
+    height: 100%;
+  }
+  & span {
+    color: var(--tom-3);
+    font-weight: 800;
+  }
+
+  & #hero-slider {
+    margin-top: 16px;
+  }
+
+  & .bolinhas {
+    position: absolute;
+
+    left: 0;
+
+    z-index: -20;
+  }
 }
 
-/* ************** */
-/* COMPONENTES */
-/* ************** */
-/*  codigo que sera reutilizado em todo o website */
+.serviços-section {
+  padding: 64px 0px;
+  & .bolinhas {
+    width: 270px;
+    height: 48px;
+  }
 
-/* Seção */
-section {
-  width: 100%;
+  & h2 {
+    color: var(--Cor-3, #664e38);
+    font-family: "Source Serif 4";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 108%; /* 21.6px */
+    letter-spacing: -1.6px;
+  }
+  & article {
+    width: 40%;
+    margin-right: 32px;
+  }
+  & article p {
+    text-align: center;
+  }
 
-  /* svh=smallest view height */
-  height: 100svh;
-  padding: 64px 32px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  & [role="mask"] {
+    width: 165px;
+    height: 320px;
+    flex-shrink: 0;
+    border-radius: 0px 8px 8px 0px;
+  }
 
-  position: relative;
+  & [role="mask"] img {
+    height: 140%;
+    transform: scaleX(-1);
+  }
 }
-/* Titulo */
-h1 {
-  color: var(--secundaria);
-  font-family: Exo;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 100%; /* 48px */
 
-  margin: 0;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
+.contato-section {
+  padding: 64px 16px;
+
+  & h1 {
+    margin: 0px 16px;
+
+    & .buttons-spacer {
+      margin: 0px 16px;
+    }
+  }
+
+  & a {
+    width: 100%;
+  }
+  & .whatsapp-link {
+    background-color: color-mix(in srgb, #128c7e 100%, white 20%);
+    color: var(--tom-1);
+  }
 }
 
-/* logo */
+.unidades-section {
+  height: fit-content;
+
+  & .map {
+    margin: 0 auto;
+  }
+}
+/* ********** */
+/* COMPONENTES*/
+/* ********** */
+/* código que será reutilizado em todo o website */
+
+/*Título*/
+
 [role="logo"] {
   width: 160px;
   height: 160px;
@@ -140,101 +197,270 @@ h1 {
   mask-size: 100%;
 }
 
-/* Mascara */
-div[role="mask"] {
+/* seção */
+section {
   width: 100%;
-  height: 260px;
-  border-radius: 8px;
+
+  /* Smallest View Heigth */
+  height: 100svh;
+
+  padding: 64px 32px;
+
   display: flex;
-
+  flex-direction: column;
   overflow: hidden;
-
-  filter: drop-shadow(0px 24px 34px rgba(0, 0, 0, 0.25));
 }
 
-/* paragrafo */
+/* PARÁGRAFO*/
+
 p {
-  font-size: 20px;
+  font-size: 16px;
   font-family: "Source Serif 4";
   opacity: 0.65;
 
   &.text-justify {
     text-align: justify;
-  }
 
-  &.text-sm {
-    font-size: 16px;
+    &.text-sn {
+      font-size: 16px;
+    }
   }
 }
 
+/* Titulo barbearia vanguarda estilizado */
+h1 {
+  color: var(--secundaria);
+  font-family: Exo;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 48px */
+  margin: 0%;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* ******* */
+/* MASCARA */
+/* ******* */
+
+div[role="mask"] {
+  width: 100%;
+  height: 260px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: 0;
+
+  overflow: hidden;
+
+  filter: drop-shadow(0px 24px 34px rgba(0, 0, 0, 0.25));
+}
+/* seção */
+section {
+  width: 100%;
+
+  /* Smallest View Heigth */
+  height: 100svh;
+
+  padding: 64px 32px;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  position: relative;
+}
+
 /* Botão */
-a,
+[role="button"],
 button {
-  /* Layout */
   width: fit-content;
   display: inline-flex;
-  padding: 8px 24px;
+  padding: 7px 29px;
   align-items: center;
-  align-content: center;
   gap: 10px;
   flex-wrap: wrap;
 
-  /*  Estilo */
+  /* Estilo*/
   border-radius: 8px;
   background: color-mix(in srgb, var(--tom-2) 100%, white 20%);
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
-  /* Tipografia */
-  color: var(--tom-3, #664e38);
+  /* Tipografia*/
+  color: var(--Cor-3, #664e38);
   font-family: Exo;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  letter-spacing: -1.28px;
   text-decoration: none;
 
-  /* Remove a cor de destaque do toque em dispositivos móveis */
-  -webkit-tap-highlight-color: transparent;
-
+  -webkit-tap-highlight-color: transparent; /* Removes tap highligth on color*/
   transition: all 150ms;
 
-  /* Interação */
   &:hover {
     background: color-mix(in srgb, var(--tom-2) 100%, black 20%);
-    color: var(--tom-1);
+    color: (var(--tom-1));
   }
 
   &:active {
     background: color-mix(in srgb, var(--tom-2) 100%, white 40%);
   }
- 
 }
 
- .Bolinhas {
-    width: 300px;
-    height: 300px;
-   
-   
-    background-color: var(--tom-3);
-    mask: url("public/Bolinhas.svg") no-repeat center;
+.bolinhas {
+  width: 300px;
+  height: 300px;
+
+  background-color: var(--tom-3);
+  mask: url(public/bolinhas.svg) no-repeat center;
+  mask-size: 100%;
+
+  &.fileira {
+    mask: url(public/fileira-de-bolinhas.svg) no-repeat center;
     mask-size: 100%;
+  }
+}
 
-    position: absolute;
-    left: 0px;
-    z-index: -20;
+.whatsapp-icon {
+  width: 24px;
+  height: 24px;
 
+  background-color: currentColor;
+  mask: url(public/whatsapp.svg) no-repeat center;
+  mask-size: 100%;
+}
+
+& .map {
+  width: fit-content;
+  background-color: var(--secundaria);
+  border-radius: 8px;
+
+  border: 4px SOLID var(--secundaria);
+  overflow: hidden;
+
+  & .map-mask {
+    width: 272px;
+    height: 156px;
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+    }
   }
 
+  & address {
+    padding: 8px;
+  }
 
+  & h2 {
+    margin: 0;
+    color: #fff;
 
+    font-family: Exo;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 108%; /* 21.6px */
+    letter-spacing: -1.6px;
+  }
 
+  & h3 {
+    margin: 0;
+    color: #fff;
 
-/* ***************** */
-/* Utilitarios */
-/* ******************* */
+    font-family: Exo;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 108%; /* 12.96px */
+    letter-spacing: -0.96px;
+  }
+}
+footer {
+  color: white;
+
+  & [role="logo"] {
+    width: 32px;
+    height: 32px;
+    background-color: white;
+  }
+
+  & div:has(nav) {
+    background-color: var(--tom-3);
+    padding: 16px 32px;
+  }
+
+  & div:has(p) {
+    background-color: color-mix(in srgb, var(--tom-3) 100%, black 40%);
+    padding: 12px 0;
+  }
+
+  & p,
+  a {
+    color: #fff;
+    font-family: Exo;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 8px */
+    margin: 0;
+    opacity: 1;
+    text-decoration: none;
+    transition: all 150ms;
+  }
+  & a:hover {
+    color: var(--tom-1);
+  }
+}
+
+/* *********** */
+/* utilitarios */
+/* *********** */
 
 .translate-y-center {
   translate: 0 -50%;
   top: 50%;
+}
 
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.gap-1 {
+  gap: 4px;
+}
+
+.gap-2 {
+  gap: 8px;
+}
+
+.gap-4 {
+  gap: 16px;
+}
+
+.gap-8 {
+  gap: 32px;
 }
