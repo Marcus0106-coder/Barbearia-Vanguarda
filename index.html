@@ -8,6 +8,9 @@
     <!--feather icon-->
     <script src="https://unpkg.com/feather-icons"></script>
 
+    <!-- Swiper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Barbearia Vanguarda</title>
   </head>
@@ -67,7 +70,17 @@
         <!-- role = paper -->
 
         <div id="hero-slider" role="mask">
-          <img src="public/image 1.jpg" alt="" />
+          <swiper-container autoplay loop speed="3000">
+            <swiper-slide>
+              <img src="public/slide-1.jpg" alt="" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="public/slide-2.jpg" alt="" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="public/slide-3.jpg" alt="" />
+            </swiper-slide>
+          </swiper-container>
         </div>
       </div>
 
