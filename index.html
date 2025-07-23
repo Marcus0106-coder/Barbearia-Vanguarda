@@ -171,7 +171,7 @@
         Confira os horários específicos de cada unidade.
       </p>
 
-      <swiper-container space-between="-96px" rewind>
+      <swiper-container class="swiper-unidades" space-between="-96" rewind>
         <swiper-slide>
           <div class="map">
             <div class="map-mask">
@@ -251,6 +251,20 @@
       // const = constante
       // menu = nome da variavel
       const menu = document.querySelector("dialog");
+
+      // RESPONSIVO SLIDER DE UNIDADES
+      document.querySelector(".swiper-unidades").breakpoints = {
+        400: {
+          // camelCase
+          spaceBetween: -116
+        }
+      }
+
+
+
+
+
+
     </script>
   </body>
 </html>
