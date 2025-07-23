@@ -176,9 +176,17 @@
 
 .unidades-section {
   height: fit-content;
+  padding: 64px 0;
 
   & .map {
     margin: 0 auto;
+  }
+
+  & p {
+    margin: 16 32px;
+  }
+  & swiper-slide:not(.swiper-slide-active) {
+    transform: scale(0.9);
   }
 }
 /* ********** */
@@ -491,6 +499,10 @@ dialog[open] + nav.main {
 swiper-container {
   width: 100%;
   height: 100%;
+}
+
+swiper-slide {
+ transition: transform 500ms;
 }
 
 /* *********** */
