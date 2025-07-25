@@ -21,6 +21,7 @@
 
   & paragrafo-hero {
     width: 272px;
+    align-self: center;
   }
 
   & header {
@@ -62,6 +63,15 @@
     & img {
       height: initial;
       width: 100%;
+    }
+  }
+  @media (min-width: 1024px) {
+    & #header-mask-spacer {
+      width: 80%;
+      margin: 0 auto;
+    }
+    & [role="mask"] {
+      height: 50vh !important;
     }
   }
 }
@@ -132,12 +142,26 @@
 
   @media (min-width: 768px) {
     & [role="mask"] {
-      width: 620px;
-      height: 620px;
+      width: 520px;
+      height: 520px;
       right: -100px;
     }
     & .card {
       width: 370px;
+    }
+  }
+  @media (min-width: 1024px) {
+    & .card {
+      width: 570px;
+      border-image-source: linear-gradient(
+        12deg,
+        var(--tom-1) 60%,
+        var(--tom-3) 100%
+      );
+    }
+    & .bolinhas {
+      width: 400px;
+      height: 400px;
     }
   }
 }
@@ -193,6 +217,22 @@
       margin-top: 20px;
     }
   }
+  @media (min-width: 1024px) {
+    & .mask-article-spacer {
+      justify-content: center;
+    }
+    & [role="mask"] {
+      position: absolute;
+      left: 0;
+
+      transform: scale(1.4);
+      translate: 0 -50%;
+      top: 50%;
+    }
+    & article {
+      margin-right: 0;
+    }
+  }
 }
 
 .contato-section {
@@ -225,6 +265,22 @@
       gap: 16px;
     }
   }
+  @media (min-width: 1024px) {
+    & h1 {
+      text-align: center;
+    }
+    & [role="mask"] {
+      height: 50vh;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    & .buttons-spacer {
+      justify-content: center;
+    }
+    & a {
+      width: 35%;
+    }
+  }
 }
 
 .unidades-section {
@@ -242,11 +298,24 @@
     transform: scale(0.9);
   }
 
-  @media (min-width:768px){
+  @media (min-width: 768px) {
     padding-bottom: 128px;
-     & p{
+    & p {
       margin: 64px 128px;
-     }
+    }
+  }
+  @media (min-width: 1024px) {
+    & p {
+      margin: 64px auto;
+      max-width: 50%;
+    }
+
+    & swiper-container {
+      width: 100vw;
+      position: relative;
+      translate: -50% 0;
+      left: 50%;
+    }
   }
 }
 /* ********** */
@@ -254,12 +323,9 @@
 /* ********** */
 /* código que será reutilizado em todo o website */
 
-
-main{
+main {
   overflow: hidden;
 }
-
-
 
 /*Título*/
 
@@ -272,9 +338,6 @@ main{
   mask: url("public/logo.svg") no-repeat center;
   mask-size: 100%;
 }
-
-
-
 
 /* PARÁGRAFO*/
 
@@ -323,8 +386,8 @@ div[role="mask"] {
 section,
 dialog {
   width: 100%;
-max-width: 1024px;
-margin: 0 auto;
+  max-width: 1024px;
+  margin: 0 auto;
   /* Smallest View Heigth */
   height: 100svh;
 
@@ -332,12 +395,14 @@ margin: 0 auto;
 
   display: flex;
   flex-direction: column;
-  
 
   position: relative;
 
   @media (min-width: 768px) {
     padding: 64px;
+  }
+  @media (min-width: 1024px) {
+    padding: 96px;
   }
 }
 
@@ -498,12 +563,21 @@ footer {
     color: var(--tom-1);
   }
 
-  @media (min-width:768px) {
-
-& div:has(nav) {
-  padding: 64px;
-}
-
+  @media (min-width: 768px) {
+    & div:has(nav) {
+      padding: 64px;
+    }
+  }
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    margin: 0 auto;
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+     & [role="logo"] {
+    width: 96px;
+    height: 96px;
+   
+  }
   }
 }
 
